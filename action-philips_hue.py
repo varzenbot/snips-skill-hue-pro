@@ -114,6 +114,8 @@ class Skill_Hue:
         print("[HUE] Received")
         # all the intents have a house_room slot, extract here
         rooms = self.extract_house_rooms(intent_message)
+        if len(rooms) == 0:
+            rooms.append("office")
         intent_name = intent_message.intent.intent_name
         if ':' in intent_name:
             intent_name = intent_name.split(":")[1]

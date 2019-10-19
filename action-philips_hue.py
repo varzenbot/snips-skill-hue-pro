@@ -117,7 +117,7 @@ class Skill_Hue:
         if len(rooms) == 0:
             print("DEBUG HUE: ")
             print(intent_message)
-            rooms.append("office")
+            rooms.append("livingroom")
         intent_name = intent_message.intent.intent_name
         if ':' in intent_name:
             intent_name = intent_name.split(":")[1]

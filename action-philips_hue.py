@@ -114,10 +114,12 @@ class Skill_Hue:
         print("[HUE] Received")
         # all the intents have a house_room slot, extract here
         rooms = self.extract_house_rooms(intent_message)
+        '''
         if len(rooms) == 0:
             print("DEBUG HUE: ")
             print(intent_message)
             rooms.append("livingroom")
+        '''
         intent_name = intent_message.intent.intent_name
         if ':' in intent_name:
             intent_name = intent_name.split(":")[1]
@@ -141,7 +143,8 @@ class Skill_Hue:
             for room in rooms:
                 self.snipshue.light_on(room.lower())
         else:
-            self.snipshue.light_on_all()
+            self.snipshue.loght_on("livingroom")
+            #self.snipshue.light_on_all()
         self.terminate_feedback(hermes, intent_message)
 
     def turn_off(self, hermes, intent_message, rooms):
@@ -149,7 +152,8 @@ class Skill_Hue:
             for room in rooms:
                 self.snipshue.light_off(room.lower())
         else:
-            self.snipshue.light_off_all()
+            self.snipshue.loght_off("livingroom")
+            #self.snipshue.light_off_all()
         self.terminate_feedback(hermes, intent_message)
 
     def set_brightness(self, hermes, intent_message, rooms):

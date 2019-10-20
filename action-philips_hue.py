@@ -143,7 +143,7 @@ class Skill_Hue:
             for room in rooms:
                 self.snipshue.light_on(room.lower())
         else:
-            self.snipshue.loght_on("livingroom")
+            self.snipshue.light_on("livingroom")
             #self.snipshue.light_on_all()
         self.terminate_feedback(hermes, intent_message)
 
@@ -152,7 +152,7 @@ class Skill_Hue:
             for room in rooms:
                 self.snipshue.light_off(room.lower())
         else:
-            self.snipshue.loght_off("livingroom")
+            self.snipshue.light_off("livingroom")
             #self.snipshue.light_off_all()
         self.terminate_feedback(hermes, intent_message)
 
